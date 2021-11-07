@@ -1,0 +1,26 @@
+[
+    {
+        "ipAddress": "202.164.149.**",
+        "country": "United States",
+        "device": "Mobile",
+        "consentStatus": "Accepted",
+        "time": "10:23 AM",
+        "date": "02/11/2019"
+    },
+    {
+        "ipAddress": "203.164.150.**",
+        "country": "United States",
+        "device": "Mobile",
+        "consentStatus": "Partially Accepted",
+        "time": "10:23 AM",
+        "date": "02/11/2019"
+    },
+    {
+        "ipAddress": "208.164.151.**",
+        "country": "United States",
+        "device": "Mobile",
+        "consentStatus": "Partially Accepted",
+        "time": "10:23 AM",
+        "date": "02/11/2019"
+    }
+]
