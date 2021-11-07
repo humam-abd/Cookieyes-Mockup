@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { useGlobalContext } from "../domain/context/GlobalContext";
 
@@ -8,7 +7,7 @@ export const Header = () => {
   const [searchString, setSearchString] = useState("");
 
   return (
-    <header className="p-3 mb-3 border-bottom">
+    <header className="p-3 mb-3 border-bottom bg-light">
       <div className="container">
         <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-end">
           <div className="col-12 col-lg-auto">
@@ -29,13 +28,13 @@ export const Header = () => {
               }}
             />
           </div>
-          <div className="ms-2 rounded border" style={{ height: "35px" }}>
+          <div className="ms-2 rounded border header-icons">
             <img className="m-1 mt-2" src="combined-shape.svg" alt="ring" />
           </div>
-          <div className="ms-2 rounded border" style={{ height: "35px" }}>
+          <div className="ms-2 rounded border header-icons">
             <img className="m-1 mt-2" src="settings-2_2.svg" alt="ring" />
           </div>
-          <div className="ms-2 rounded border" style={{ height: "35px" }}>
+          <div className="ms-2 rounded border header-icons">
             <img className="m-1 mt-2" src="group-5.svg" alt="ring" />
           </div>
         </div>

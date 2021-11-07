@@ -4,7 +4,7 @@ import { useGlobalContext } from "../domain/context/GlobalContext";
 
 export const SubHeader = () => {
   const [currentDate, setDate] = useState("");
-  const { scripts, reScanValues } = useCookieContext();
+  const { reScanValues } = useCookieContext();
   const { searchValue } = useGlobalContext();
 
   return (
@@ -17,18 +17,20 @@ export const SubHeader = () => {
         </p>
       </div>
       <div className="col-lg-3 col-md-12 row float-end">
-        <div className="col-6">
-          {currentDate && <p>Last Scan: {currentDate}</p>}
+        <div className="col-8 pt-3">
+          {currentDate && (
+            <p className="translucent">Last Scan: {currentDate}</p>
+          )}
         </div>
         <button
-          className="col-6 btn btn-primary"
+          className="col-4 btn btn-primary"
           onClick={() => {
             reScanValues();
             const currentDate = new Date().toISOString().split("T")[0];
             setDate(currentDate);
           }}
         >
-          Rescan {scripts}
+          Rescan
         </button>
       </div>
     </div>

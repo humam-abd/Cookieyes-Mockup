@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 .App {
   text-align: center;
 }
@@ -13,6 +15,11 @@
   }
 }
 
+.main-body {
+  background-color: $body-color;
+  overflow: scroll;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -21,23 +28,27 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: $white;
 }
 
 .App-link {
   color: #61dafb;
 }
 
+.resolution {
+  min-height: 100vh;
+  width: 20%;
+}
+
 .sidebar-bg-color {
   .cookie-yes {
     background-size: contain;
     padding: 1rem;
+    img {
+      width: 100%;
+    }
   }
-
   background-image: linear-gradient(to bottom, #1883bd, #251888);
-  img {
-    width: 100%;
-  }
 
   a {
     color: rgba(255, 255, 255, 0.5);
@@ -45,13 +56,51 @@
 
   #clickedHome:target {
     background-color: rgba(255, 255, 255, 0.157);
-    color: white;
+    color: $white;
     a {
-      color: white;
+      color: $white;
     }
   }
 
   li {
     border-radius: 10px;
   }
+}
+
+.counter-img {
+  background-size: contain;
+}
+
+.counter-card {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.img-card {
+  width: 60px;
+  height: 60px;
+  margin-top: 30px;
+  padding-top: 12px;
+  border-radius: 50%;
+}
+
+.rounded-corners {
+  border-radius: 10px !important;
+}
+
+tr {
+  width: 1145px;
+  height: 55px;
+  margin: 15px 0 20px 37px;
+  padding: 10px 145px 12px 38px;
+  border-radius: 50px;
+  background-color: $white;
+}
+
+.translucent {
+  opacity: 0.5;
+}
+
+.header-icons {
+  height: 35px;
 }

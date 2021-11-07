@@ -1,8 +1,6 @@
-import "./App.scss";
-import { Header } from "./components/Header";
+import "./styles/App.scss";
+import { Main } from "./components/Main";
 import { SideBar } from "./components/SideBar";
-import { SubHeader } from "./components/SubHeader";
-import { TableData } from "./components/TableData";
 import { CookiesContextProvider } from "./domain/context/CookiesContext";
 import { GlobalContextProvider } from "./domain/context/GlobalContext";
 
@@ -12,11 +10,7 @@ function App() {
       <CookiesContextProvider>
         <div className="App d-flex">
           <SideBar />
-          <div className="w-100 p-3">
-            <Header />
-            <SubHeader />
-            <TableData />
-          </div>
+          <Main />
         </div>
       </CookiesContextProvider>
     </GlobalContextProvider>

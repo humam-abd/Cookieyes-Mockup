@@ -1,0 +1,11 @@
+$green: #00c9a6;
+$yellow: #ffc109;
+$red: #de4437;
+$blue: #1b7cf8;
+$white: white;
+$body-color: #eeeeee;
+
+:root {
+  --green: #($green);
+  --yellow: #($yellow);
+}
