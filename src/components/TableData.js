@@ -5,16 +5,14 @@ export const TableData = () => {
   return (
     <>
       <table>
-        <thead>
-          <td>IP Address</td>
-          <td>Country</td>
-          <td>Device</td>
-          <td>Consent Status</td>
-          <td>Time and Date</td>
-        </thead>
+        <th>IP Address</th>
+        <th>Country</th>
+        <th>Device</th>
+        <th>Consent Status</th>
+        <th>Time and Date</th>
         <tbody>
           {data.map((datum) => (
-            <tr>
+            <tr key={datum.ipAddress}>
               <td>{datum.ipAddress}</td>
               <td>{datum.country}</td>
               <td>{datum.device}</td>

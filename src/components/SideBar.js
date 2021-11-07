@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 
-function SideBar() {
+export const SideBar = () => {
   return (
     <div
       className="d-flex flex-column flex-shrink-0 p-3 sidebar-bg-color"
@@ -50,6 +50,4 @@ function SideBar() {
       <hr />
     </div>
   );
-}
-
-export default SideBar;
+};
