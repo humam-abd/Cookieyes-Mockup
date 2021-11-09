@@ -4,9 +4,24 @@ import { CounterCard } from "./CounterCard";
 import { PieChart } from "./PieChart";
 
 export const Body = () => {
-  const { scripts, categories, pagesScanned } = useCookieContext();
+  const { scripts, categories, pagesScanned, isLoading } = useCookieContext();
   const totalCookies =
     Number(scripts) + Number(categories) + Number(pagesScanned);
+
+  const getColor = (type) => {
+    switch (type) {
+      case "cookie":
+        return "#ecf2ff";
+      case "script":
+        return "#fff9eb";
+      case "category":
+        return "#ecf9f6";
+      case "page":
+        return "#fdecec";
+      default:
+        return "#000000";
+    }
+  };
   return (
     <div className="d-flex row mt-3">
       <div className="col-lg-2 col-md-6">
@@ -15,7 +30,8 @@ export const Body = () => {
           count={totalCookies}
           title="Total Cookies"
           type="cookie"
-          isUpdated
+          isUpdated={isLoading}
+          color={getColor("cookie")}
         />
       </div>
       <div className="col-lg-2 col-md-6">
@@ -24,7 +40,8 @@ export const Body = () => {
           count={scripts}
           title="Total Scripts"
           type="script"
-          isUpdated
+          isUpdated={isLoading}
+          color={getColor("script")}
         />
       </div>
       <div className="col-lg-2 col-md-6">
@@ -33,7 +50,8 @@ export const Body = () => {
           count={categories}
           title="Categories"
           type="category"
-          isUpdated
+          isUpdated={isLoading}
+          color={getColor("category")}
         />
       </div>
       <div className="col-lg-2 col-md-6">
@@ -42,7 +60,8 @@ export const Body = () => {
           count={pagesScanned}
           title="Pages Scanned"
           type="page"
-          isUpdated
+          isUpdated={isLoading}
+          color={getColor("page")}
         />
       </div>
       {totalCookies > 0 && (

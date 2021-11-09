@@ -2,15 +2,19 @@ import React, { useState } from "react";
 import { useGlobalContext } from "../domain/context/GlobalContext";
 
 export const Header = () => {
-  const { setValue } = useGlobalContext();
+  const { setValue, isOpen, toggleSidebar } = useGlobalContext();
 
   const [searchString, setSearchString] = useState("");
 
   return (
-    <header className="p-3 mb-3 border-bottom bg-light">
-      <div className="container">
-        <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-end">
-          <div className="col-12 col-lg-auto">
+    <header className="p-3 border-bottom bg-light">
+      <div className="header-bar">
+        <span onClick={() => toggleSidebar(!isOpen)} className="toggler">
+          <img src="menu-toggler.svg" alt="menu" />
+        </span>
+
+        <div className="d-flex header-bar">
+          <div>
             <input
               type="text"
               className="form-control"

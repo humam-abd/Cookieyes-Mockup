@@ -16,6 +16,7 @@ const CookiesContextProvider = ({ children }) => {
     categories: 0,
     pagesScanned: 0,
   });
+  const [isLoading, setLoading] = useState(false);
 
   // Get cookies
   const scriptCookie = Cookies.get("scripts");
@@ -25,22 +26,26 @@ const CookiesContextProvider = ({ children }) => {
   const { scripts, categories, pagesScanned } = cookieStates;
 
   // Re-Scan function
-  const reScanValues = () =>
+  const reScanValues = () => {
     setCookieStates({
       ...cookieStates,
       scripts: Number(scripts) + 1,
       categories: Number(categories) + 1,
       pagesScanned: Number(pagesScanned) + 1,
     });
+    setLoading(true);
+  };
 
   // Reset values
-  const resetValues = () =>
+  const resetValues = () => {
     setCookieStates({
       ...cookieStates,
       scripts: 0,
       categories: 0,
       pagesScanned: 0,
     });
+    setLoading(false);
+  };
 
   // Set cookies on state change (for persistent values on reload)
   useEffect(() => {
@@ -69,6 +74,7 @@ const CookiesContextProvider = ({ children }) => {
         pagesScanned,
         reScanValues,
         resetValues,
+        isLoading,
       }}
     >
       {children}

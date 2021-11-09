@@ -1,10 +1,10 @@
 import React from "react";
 
-export const CounterCard = ({ src, count, title, type, isUpdated }) => {
+export const CounterCard = ({ src, count, title, type, isUpdated, color }) => {
   return (
     <div className="card rounded-corners">
       <div className="counter-card">
-        <div className="border img-card">
+        <div className="border img-card" style={{ backgroundColor: color }}>
           <img src={src} className="counter-img" alt="counter" />
         </div>
       </div>

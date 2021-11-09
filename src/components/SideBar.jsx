@@ -1,8 +1,34 @@
 import React from "react";
 
 export const SideBar = () => {
+  const dashboardMenu = [
+    {
+      name: "Dashboard",
+      image: "dashboard.svg",
+    },
+    {
+      name: "Consent Banner",
+      image: "consentbanner.svg",
+    },
+    {
+      name: "Cookies",
+      image: "cookies.svg",
+    },
+    {
+      name: "Scan",
+      image: "scan.svg",
+    },
+    {
+      name: "Reports",
+      image: "reports.svg",
+    },
+    {
+      name: "Settings",
+      image: "settings.svg",
+    },
+  ];
   return (
-    <div className="d-flex flex-column flex-shrink-0 p-3 sidebar-bg-color resolution">
+    <div className="d-flex flex-column flex-shrink-0 p-3 sidebar-bg-color resolution resol-width">
       <div className="cookie-yes">
         <a
           href="/"
@@ -13,46 +39,18 @@ export const SideBar = () => {
       </div>
 
       <ul className="nav nav-pills flex-column text-start">
-        <li id="clickedHome" className="nav-item mb-3 mt-3">
-          <a
-            href="#clickedHome"
-            className="nav-link link-light"
-            aria-current="page"
-          >
-            <img src="dashboard.svg" className="me-2" alt="dashboard" />
-            Dashboard
-          </a>
-        </li>
-        <li id="clickedConsentBanner" className="nav-item mb-3">
-          <a href="#clickedConsentBanner" className="nav-link link-light">
-            <img src="consentbanner.svg" className="me-2" alt="consentbanner" />
-            Consent Banner
-          </a>
-        </li>
-        <li id="clickedCookies" className="nav-item mb-3">
-          <a href="#clickedCookies" className="nav-link link-light">
-            <img src="cookies.svg" className="me-2" alt="cookies" />
-            Cookies
-          </a>
-        </li>
-        <li id="clickedScan" className="nav-item mb-3">
-          <a href="#clickedScan" className="nav-link link-light">
-            <img src="scan.svg" className="me-2" alt="scan" />
-            Scan
-          </a>
-        </li>
-        <li id="clickedReports" className="nav-item mb-3">
-          <a href="#clickedReports" className="nav-link link-light">
-            <img src="reports.svg" className="me-2" alt="reports" />
-            Reports
-          </a>
-        </li>
-        <li id="clickedSettings" className="nav-item mb-3">
-          <a href="#clickedSettings" className="nav-link link-light">
-            <img src="settings.svg" className="me-2" alt="settings" />
-            Settings
-          </a>
-        </li>
+        {dashboardMenu.map((menu) => (
+          <li id={`clicked${menu.name}`} className="nav-item mb-3 mt-3">
+            <a
+              href={`#clicked${menu.name}`}
+              className="nav-link link-light"
+              aria-current="page"
+            >
+              <img src={menu.image} className="me-2" alt={menu.name} />
+              {menu.name}
+            </a>
+          </li>
+        ))}
       </ul>
       <hr />
     </div>
