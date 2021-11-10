@@ -9,10 +9,7 @@ const GlobalContextProvider = ({ children }) => {
   const [searchValue, setSearchValue] = useState("https://cookieyes.com");
   const [isOpen, setOpen] = useState(true);
   const setValue = (value) => setSearchValue(value);
-  const toggleSidebar = (value) => {
-    setOpen(value);
-    console.log(isOpen);
-  };
+  const toggleSidebar = (value) => setOpen(value);
 
   return (
     <GlobalContext.Provider
